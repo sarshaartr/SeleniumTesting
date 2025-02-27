@@ -18,9 +18,10 @@ driver.find_element(By.ID, "permanentAddress").send_keys("Mention above")
 
 time.sleep(1)
 
-submit_button = driver.find_element(By.ID, "submit").click()
+submit_button = driver.find_element(By.ID, "submit")
+driver.execute_script("arguments[0].click();", submit_button)
 
-time.sleep(2)
+time.sleep(5)
 
 
 output_text = driver.find_element(By.ID, "output").text
